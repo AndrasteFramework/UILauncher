@@ -29,12 +29,12 @@ jobs:
         uses: vimtor/action-zip@v1.2
         with:
           files: bin\Release\net48\
-          dest: Andraste-UILauncher-${{ github.ref }}.zip
+          dest: Andraste-UILauncher-${{ github.ref_name }}.zip
           
       - name: Create Release
         uses: softprops/action-gh-release@v1
         with:
-          files: Andraste-UILauncher-${{ github.ref }}.zip
+          files: Andraste-UILauncher-${{ github.ref_name }}.zip
           tag_name: ${{ github.ref }}
           name: Release ${{ github.ref }}
         env:
