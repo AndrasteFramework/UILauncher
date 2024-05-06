@@ -106,6 +106,7 @@ namespace Andraste.UILauncher
 
         private async Task RefreshMods(Profile? profile)
         {
+            btnRefreshMods.Enabled = false;
             progressBar1.Style = ProgressBarStyle.Marquee;
             listView1.CheckBoxes = true;
             listView1.Items.Clear();
@@ -144,6 +145,7 @@ namespace Andraste.UILauncher
             }
 
             progressBar1.Style = ProgressBarStyle.Blocks;
+            btnRefreshMods.Enabled = true;
         }
 
         private async void btnRefreshMods_Click(object sender, EventArgs e)
