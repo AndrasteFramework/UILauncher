@@ -290,8 +290,12 @@ namespace Andraste.UILauncher
                 builder.Append($"--file=\"{activeProfile.GameExecutable}\" ");
                 builder.Append($"--modsJsonPath=\"{Path.Combine(activeProfile.ProfileFolder, "mods.json")}\" ");
                 builder.Append($"--frameworkDll=\"{activeProfile.FrameworkLocation}\" ");
-                builder.Append($"--commandLine=\"{activeProfile.CommandLine}\"");
                 
+                if (!string.IsNullOrEmpty(activeProfile.CommandLine))
+                {
+                    builder.Append($"--commandLine=\"{activeProfile.CommandLine}\"");
+                }
+
                 var launcherStartInfo = new ProcessStartInfo(Path.Combine(frameworkFolder, "Andraste.Launcher.exe"), builder.ToString())
                 {
                     UseShellExecute = false,
