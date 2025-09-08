@@ -32,37 +32,42 @@ namespace Andraste.UILauncher.Wizards.AddProfileWizard
         private void InitializeComponent()
         {
             this.lblDescription = new System.Windows.Forms.Label();
-            this.rbBuiltin = new System.Windows.Forms.RadioButton();
+            this.rbBuiltinX86 = new System.Windows.Forms.RadioButton();
             this.rbExternal = new System.Windows.Forms.RadioButton();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblFrameworkPath = new System.Windows.Forms.Label();
             this.btnBrowse = new System.Windows.Forms.Button();
             this.dlgOpenAndraste = new System.Windows.Forms.OpenFileDialog();
+            this.rbBuiltinX64 = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
             // lblDescription
             // 
-            this.lblDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) | System.Windows.Forms.AnchorStyles.Left) | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblDescription.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.lblDescription.Location = new System.Drawing.Point(12, 9);
             this.lblDescription.Name = "lblDescription";
-            this.lblDescription.Size = new System.Drawing.Size(438, 34);
+            this.lblDescription.Size = new System.Drawing.Size(438, 26);
             this.lblDescription.TabIndex = 2;
-            this.lblDescription.Text = "Please choose which Andraste Framework Distribution to pick.\r\nIn most cases using" + " the bundled Andraste Framework is recommended.";
+            this.lblDescription.Text = "Please choose which Andraste Framework Distribution to pick.\r\nIn most cases using" +
+    " the bundled Andraste Framework is recommended.";
             // 
-            // rbBuiltin
+            // rbBuiltinX86
             // 
-            this.rbBuiltin.Checked = true;
-            this.rbBuiltin.Location = new System.Drawing.Point(12, 55);
-            this.rbBuiltin.Name = "rbBuiltin";
-            this.rbBuiltin.Size = new System.Drawing.Size(175, 24);
-            this.rbBuiltin.TabIndex = 3;
-            this.rbBuiltin.TabStop = true;
-            this.rbBuiltin.Text = "Bundled Andraste Framework";
-            this.rbBuiltin.UseVisualStyleBackColor = true;
+            this.rbBuiltinX86.Checked = true;
+            this.rbBuiltinX86.Location = new System.Drawing.Point(12, 55);
+            this.rbBuiltinX86.Name = "rbBuiltinX86";
+            this.rbBuiltinX86.Size = new System.Drawing.Size(201, 24);
+            this.rbBuiltinX86.TabIndex = 3;
+            this.rbBuiltinX86.TabStop = true;
+            this.rbBuiltinX86.Text = "Bundled Andraste Framework 32bit";
+            this.rbBuiltinX86.UseVisualStyleBackColor = true;
             // 
             // rbExternal
             // 
-            this.rbExternal.Location = new System.Drawing.Point(12, 76);
+            this.rbExternal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.rbExternal.Location = new System.Drawing.Point(12, 97);
             this.rbExternal.Name = "rbExternal";
             this.rbExternal.Size = new System.Drawing.Size(168, 24);
             this.rbExternal.TabIndex = 4;
@@ -74,7 +79,7 @@ namespace Andraste.UILauncher.Wizards.AddProfileWizard
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(128, 100);
+            this.textBox1.Location = new System.Drawing.Point(110, 127);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(311, 20);
             this.textBox1.TabIndex = 5;
@@ -82,8 +87,9 @@ namespace Andraste.UILauncher.Wizards.AddProfileWizard
             // 
             // lblFrameworkPath
             // 
+            this.lblFrameworkPath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblFrameworkPath.Enabled = false;
-            this.lblFrameworkPath.Location = new System.Drawing.Point(30, 103);
+            this.lblFrameworkPath.Location = new System.Drawing.Point(12, 130);
             this.lblFrameworkPath.Name = "lblFrameworkPath";
             this.lblFrameworkPath.Size = new System.Drawing.Size(92, 23);
             this.lblFrameworkPath.TabIndex = 6;
@@ -93,7 +99,7 @@ namespace Andraste.UILauncher.Wizards.AddProfileWizard
             // 
             this.btnBrowse.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowse.Enabled = false;
-            this.btnBrowse.Location = new System.Drawing.Point(445, 97);
+            this.btnBrowse.Location = new System.Drawing.Point(427, 125);
             this.btnBrowse.Name = "btnBrowse";
             this.btnBrowse.Size = new System.Drawing.Size(75, 23);
             this.btnBrowse.TabIndex = 7;
@@ -107,20 +113,31 @@ namespace Andraste.UILauncher.Wizards.AddProfileWizard
             this.dlgOpenAndraste.FileName = "Andraste.Payload.Generic.dll";
             this.dlgOpenAndraste.Filter = "Andraste Payload|*.dll";
             // 
+            // rbBuiltinX64
+            // 
+            this.rbBuiltinX64.Location = new System.Drawing.Point(12, 75);
+            this.rbBuiltinX64.Name = "rbBuiltinX64";
+            this.rbBuiltinX64.Size = new System.Drawing.Size(201, 24);
+            this.rbBuiltinX64.TabIndex = 8;
+            this.rbBuiltinX64.Text = "Bundled Andraste Framework 64bit";
+            this.rbBuiltinX64.UseVisualStyleBackColor = true;
+            // 
             // SelectAndrastePath
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.rbBuiltinX64);
             this.Controls.Add(this.btnBrowse);
             this.Controls.Add(this.lblFrameworkPath);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.rbExternal);
-            this.Controls.Add(this.rbBuiltin);
+            this.Controls.Add(this.rbBuiltinX86);
             this.Controls.Add(this.lblDescription);
             this.Name = "SelectAndrastePath";
-            this.Size = new System.Drawing.Size(523, 161);
+            this.Size = new System.Drawing.Size(523, 189);
             this.ResumeLayout(false);
             this.PerformLayout();
+
         }
 
         private System.Windows.Forms.OpenFileDialog dlgOpenAndraste;
@@ -133,12 +150,14 @@ namespace Andraste.UILauncher.Wizards.AddProfileWizard
 
         private System.Windows.Forms.RadioButton rbExternal;
 
-        private System.Windows.Forms.RadioButton rbBuiltin;
+        private System.Windows.Forms.RadioButton rbBuiltinX86;
 
         private System.Windows.Forms.GroupBox grpExternal;
 
         private System.Windows.Forms.Label lblDescription;
 
         #endregion
+
+        private System.Windows.Forms.RadioButton rbBuiltinX64;
     }
 }

@@ -8,11 +8,8 @@ namespace Andraste.UILauncher.Wizards.AddProfileWizard
 {
     public partial class SelectAndrastePath : AWizardPage
     {
-        private static readonly string BundledFramework = Path.Combine(
-            Directory.GetParent(Assembly.GetEntryAssembly()!.Location).FullName,
-            "GenericFramework", "Andraste.Payload.Generic.dll");
         public override bool CanContinue => !rbExternal.Checked || File.Exists(textBox1.Text);
-        public string FrameworkLocation => rbExternal.Checked ? textBox1.Text : BundledFramework;
+        public string FrameworkLocation => rbExternal.Checked ? textBox1.Text : BundledFramework(rbBuiltinX64.Checked);
 
         public SelectAndrastePath()
         {
@@ -38,6 +35,12 @@ namespace Andraste.UILauncher.Wizards.AddProfileWizard
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
             OnReevaluate?.Invoke();
+        }
+
+        private static string BundledFramework(bool x64)
+        {
+            return Path.Combine(Directory.GetParent(Assembly.GetEntryAssembly()!.Location).FullName,
+                "GenericFramework", x64 ? "x64" : "x86", "Andraste.Payload.Generic.dll");
         }
     }
 }
